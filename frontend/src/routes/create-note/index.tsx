@@ -1,13 +1,13 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import toast from 'react-hot-toast'
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import toast from 'react-hot-toast';
 
-import NoteForm from '../../components/NoteForm'
-import { createNote } from '../../services/noteServices'
+import NoteForm from '../../components/NoteForm';
+import { createNote } from '../../services/noteServices';
 
 export const Route = createFileRoute('/create-note/')({
   component: CreateNote,
-})
+});
 
 function CreateNote() {
 
@@ -27,7 +27,7 @@ function CreateNote() {
       //     data: [...oldQueryData.data, newData.data]
       //   }
       // })
-      navigate({to:"/"})
+      navigate({to:"/"});
     },
     onError: () => {
       toast.error("Failed to create note");

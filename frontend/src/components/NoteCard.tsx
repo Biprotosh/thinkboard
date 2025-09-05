@@ -1,12 +1,12 @@
-import { Link } from "@tanstack/react-router"
-import type { INote } from "../types/Note"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import axios from "axios"
-import toast from "react-hot-toast"
+import { Link } from "@tanstack/react-router";
+import type { INote } from "../types/Note";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const deleteNote = (id: string) => {
-    return axios.delete(`http://localhost:5001/api/notes/${id}`)
-}
+    return axios.delete(`http://localhost:5001/api/notes/${id}`);
+};
 
 const NoteCard = ({ title, description, createdAt, _id }: INote) => {
 
@@ -25,7 +25,7 @@ const NoteCard = ({ title, description, createdAt, _id }: INote) => {
         if (_id === undefined)
             return toast.error("Note not found");
         mutate(_id);
-    }
+    };
 
     return (
         <Link to="/note-details/$id" params={{ id: `${_id}` }}>
@@ -57,7 +57,7 @@ const NoteCard = ({ title, description, createdAt, _id }: INote) => {
                 </div>
             </div>
         </Link>
-    )
-}
+    );
+};
 
-export default NoteCard
+export default NoteCard;

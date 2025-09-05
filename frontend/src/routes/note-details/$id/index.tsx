@@ -1,18 +1,18 @@
-import { createFileRoute, Link, useParams } from '@tanstack/react-router'
-import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card"
-import { Button } from "@heroui/button"
-import { useQuery } from '@tanstack/react-query'
-import type { AxiosResponse } from 'axios'
-import type { INote } from '../../../types/Note'
-import axios from 'axios'
+import { createFileRoute, Link, useParams } from '@tanstack/react-router';
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import { Button } from "@heroui/button";
+import { useQuery } from '@tanstack/react-query';
+import type { AxiosResponse } from 'axios';
+import type { INote } from '../../../types/Note';
+import axios from 'axios';
 
 export const Route = createFileRoute('/note-details/$id/')({
   component: EditNote,
-})
+});
 
 function EditNote() {
 
-  const { id } = useParams({ from: "/note-details/$id/" })
+  const { id } = useParams({ from: "/note-details/$id/" });
 
   const { data, isLoading, isError, error } = useQuery<AxiosResponse<INote>>({
     queryKey: ["api", "notes", id], // cache per id

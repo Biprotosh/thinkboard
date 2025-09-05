@@ -1,12 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router'
-import NoteCard from '../components/NoteCard'
-import { useQuery } from '@tanstack/react-query'
+import { createFileRoute } from '@tanstack/react-router';
+import NoteCard from '../components/NoteCard';
+import { useQuery } from '@tanstack/react-query';
 import axios, { type AxiosResponse } from 'axios';
 import type { INote } from '../types/Note';
 
 export const Route = createFileRoute('/')({
   component: Index,
-})
+});
 
 function Index() {
 
@@ -19,8 +19,8 @@ function Index() {
     // refetchInterval: 1000 // it will refetch data every single second
   });
 
-  if(isLoading) return <div>Page is loading...</div>
-  if(isError) return <div>{error.message}</div>
+  if(isLoading) return <div>Page is loading...</div>;
+  if(isError) return <div>{error.message}</div>;
 
   // console.log(data);
 
@@ -32,5 +32,5 @@ function Index() {
         </div>
       ))}
     </div>
-  )
+  );
 }

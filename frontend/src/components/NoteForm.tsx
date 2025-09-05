@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Input, Textarea } from '@heroui/react'
+import { Button, Card, CardBody, CardFooter, CardHeader, Input, Textarea } from '@heroui/react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import type { INote } from '../types/Note';
@@ -55,6 +55,6 @@ const NoteForm = ({ defaultValues, onSubmit, heading, submitLabel }: NoteFormPro
       </form>
     </Card>
   );
-}
+};
 
-export default NoteForm
+export default NoteForm;

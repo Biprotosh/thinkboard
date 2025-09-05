@@ -1,18 +1,18 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { HeroUIProvider } from '@heroui/react'
-import { Toaster } from "react-hot-toast"
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { HeroUIProvider } from '@heroui/react';
+import { Toaster } from "react-hot-toast";
 
-import './index.css'
+import './index.css';
 
 // Import the generated route tree
-import { routeTree } from './routeTree.gen'
+import { routeTree } from './routeTree.gen';
 
 // Create a new router instance
-const router = createRouter({ routeTree })
-const queryClient = new QueryClient()
+const router = createRouter({ routeTree });
+const queryClient = new QueryClient();
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {
@@ -22,9 +22,9 @@ declare module '@tanstack/react-router' {
 }
 
 // Render the app
-const rootElement = document.getElementById('root')!
+const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
+  const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
@@ -34,5 +34,5 @@ if (!rootElement.innerHTML) {
         </HeroUIProvider>
       </QueryClientProvider>
     </StrictMode>,
-  )
+  );
 }
