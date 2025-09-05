@@ -17,7 +17,7 @@ function EditNote() {
   const { data, isLoading, isError, error } = useQuery<AxiosResponse<INote>>({
     queryKey: ["api", "notes", id], // cache per id
     queryFn: () => axios.get(`http://localhost:5001/api/notes/${id}`),
-    staleTime: 30000
+    staleTime: 30000,
   });
 
   if (isLoading) return <div>Loading note...</div>;

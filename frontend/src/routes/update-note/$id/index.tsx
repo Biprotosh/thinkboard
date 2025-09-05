@@ -5,29 +5,15 @@ import {
 } from "@tanstack/react-router";
 import NoteForm from "../../../components/NoteForm";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import { type INote } from "../../../types/Note";
 import toast from "react-hot-toast";
+import { fetchNote, updateNote } from "../../../services/noteServices";
 
 export const Route = createFileRoute("/update-note/$id/")({
     component: UpdateNote,
 });
 
-const fetchNote = async (id: string): Promise<INote> => {
-    const res = await axios.get<INote>(`http://localhost:5001/api/notes/${id}`);
-    return res.data;
-};
-
-const updateNote = async (note: INote): Promise<INote> => {
-    const res = await axios.put<INote>(
-        `http://localhost:5001/api/notes/${note._id}`,
-        note
-    );
-    return res.data;
-};
-
 function UpdateNote() {
-    const { id } = useParams({ from: "/update-note/$id/" });
+    const {id} = useParams({from: "/note-details/$id/"});
     const queryClient = useQueryClient();
     const navigate = useNavigate();
 
@@ -60,7 +46,7 @@ function UpdateNote() {
             heading="Update Note"
             submitLabel="Save"
             defaultValues={note}
-            onSubmit={(data) => mutate({ ...note, ...data })}
+            onSubmit={(data) => mutate({...note, ...data})}
         />
     );
 }

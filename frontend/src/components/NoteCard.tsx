@@ -1,12 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import type { INote } from "../types/Note";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
 import toast from "react-hot-toast";
-
-const deleteNote = (id: string) => {
-    return axios.delete(`http://localhost:5001/api/notes/${id}`);
-};
+import { deleteNote } from "../services/noteServices";
 
 const NoteCard = ({ title, description, createdAt, _id }: INote) => {
 
@@ -18,11 +14,14 @@ const NoteCard = ({ title, description, createdAt, _id }: INote) => {
             // invalidate or refetch notes list
             queryClient.invalidateQueries({ queryKey: ["api", "notes"] });
         },
+        onError: () => {
+            toast.error("Failed to delete the note");
+        }
     });
 
     const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        if (_id === undefined)
+        if(_id === undefined)
             return toast.error("Note not found");
         mutate(_id);
     };
