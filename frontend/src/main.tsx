@@ -7,6 +7,7 @@ import { routeTree } from './routeTree.gen'
 
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
+import { Toaster } from 'react-hot-toast'
 
 // Create a new router instance
 const router = createRouter({
@@ -31,6 +32,7 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
+      <Toaster position='top-center'/>
       <RouterProvider router={router} />
     </StrictMode>,
   )

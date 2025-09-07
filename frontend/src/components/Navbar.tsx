@@ -4,7 +4,7 @@ import { FiPlus } from "react-icons/fi";
 const Navbar = () => {
   return (
     <header>
-      <nav className="max-w-6xl mx-auto p-4 flex items-center justify-between text-white shadow-lg rounded-xl">
+      <nav className="max-w-6xl mx-auto p-4 flex items-center justify-between text-white shadow-lg rounded-xl bg-gray-600">
         <Link to={"/"}>
           <h1 className="text-3xl font-bold font-mono text-[#F5A524]">ThinkBoard</h1>
         </Link>

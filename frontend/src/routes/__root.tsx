@@ -6,21 +6,23 @@ import Navbar from '@/components/Navbar'
 
 
 export const Route = createRootRoute({
-  component: () => (
-    <>
-      <Navbar />
-      <Outlet />
-      <TanstackDevtools
-        config={{
-          position: 'bottom-left',
-        }}
-        plugins={[
-          {
-            name: 'Tanstack Router',
-            render: <TanStackRouterDevtoolsPanel />,
-          },
-        ]}
-      />
-    </>
-  ),
+    component: () => (
+        <>
+            <div className="max-w-6xl mx-auto px-4 py-4">
+                <Navbar />
+                <Outlet />
+            </div>
+            <TanstackDevtools
+                config={{
+                    position: 'bottom-left',
+                }}
+                plugins={[
+                    {
+                        name: 'Tanstack Router',
+                        render: <TanStackRouterDevtoolsPanel />,
+                    },
+                ]}
+            />
+        </>
+    ),
 })
