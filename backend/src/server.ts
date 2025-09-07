@@ -9,7 +9,7 @@ const app = express();
 const PORT = env_config.PORT;
 
 app.use(cors({
-    origin: ["http://localhost:5173"]
+    origin: ["http://localhost:3000"]
 })) // this middleware allows the frontend to access the api
 
 app.use(express.json()); // first we have to tell the express how are we gonna parse req.body
