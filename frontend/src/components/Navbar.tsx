@@ -9,7 +9,7 @@ const Navbar = () => {
           <h1 className="text-3xl font-bold font-mono text-[#F5A524]">ThinkBoard</h1>
         </Link>
         <div className="flex items-center gap-4">
-          <Link to={"/"} className="flex gap-2 items-center">
+          <Link to={"/create-note"} className="flex gap-2 items-center">
             <button className="font-semibold px-2 py-2 text-sm rounded-lg bg-orange-400 text-white hover:bg-orange-500 transition flex items-center gap-1">
               <FiPlus size={20} />  New Note
             </button>

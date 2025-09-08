@@ -4,7 +4,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 import NoteCard from '@/components/NoteCard'
-import type { INote } from '@/types/Note';
+import type { TNote } from '@/types/Note';
 
 export const Route = createFileRoute('/')({
     component: App,
@@ -29,7 +29,7 @@ function App() {
             <section className='mt-3'>
                 {data?.data?.length > 0 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data?.data?.map((note: INote) => (
+                        {data?.data?.map((note: TNote) => (
                             <div key={note._id}>
                                 <NoteCard {...note} />
                             </div>
