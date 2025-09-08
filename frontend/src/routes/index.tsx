@@ -3,8 +3,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-import NoteCard from '../components/NoteCard'
-import type { INote } from '../types/Note';
+import NoteCard from '@/components/NoteCard'
+import type { INote } from '@/types/Note';
 
 export const Route = createFileRoute('/')({
     component: App,
