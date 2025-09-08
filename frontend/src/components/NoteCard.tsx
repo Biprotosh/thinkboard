@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router";
+// import { Link } from "@tanstack/react-router";
 import type { INote } from "../types/Note";
 // import { useMutation, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 // import { deleteNote } from "../services/noteServices";
 
-const NoteCard = ({ title, description, createdAt, _id }: INote) => {
+const NoteCard = ({ title, description, createdAt }: INote) => {
 
     // const queryClient = useQueryClient();
     // const { mutate } = useMutation({
