@@ -1,9 +1,10 @@
 import NoteCard from '@/components/NoteCard'
-import type { INote } from '@/types/Note';
+import { useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router'
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+
+import type { INote } from '@/types/Note';
 
 export const Route = createFileRoute('/')({
     component: App,
@@ -11,32 +12,24 @@ export const Route = createFileRoute('/')({
 
 function App() {
 
-    const [notes, setNotes] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { data, isLoading, isError, error } = useQuery({
+        queryKey: ["api", "notes"],
+        queryFn: () => {
+            return axios.get("http://localhost:5001/api/notes");
+        },
+        staleTime: 30000, // 30000 ms 
+        // refetchInterval: 1000 // it will refetch data every single second
+    });
 
-    useEffect(() => {
-        const fetchNotes = async () => {
-            try {
-                const res = await axios.get("http://localhost:5001/api/notes");
-                // console.log(res.data);
-                setNotes(res.data);
-            } catch (error) {
-                console.log('Error fetching data');
-                toast.error("Failed to load notes");
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchNotes();
-    }, [])
+    if (isLoading) return <div>Page is loading...</div>;
+    if (isError) return <div>{toast.error(error.message)}</div>;
 
     return (
         <>
             <section className='mt-3'>
-                {loading && <div className="text-center text-primary py-10">Loading notes...</div>}
-                {notes.length > 0 && (
+                {data?.data?.length > 0 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {notes.map((note: INote) => (
+                        {data?.data?.map((note: INote) => (
                             <div key={note._id}>
                                 <NoteCard {...note} />
                             </div>
