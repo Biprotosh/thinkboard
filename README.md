@@ -2,31 +2,22 @@
 
 ThinkBoard is a modern web application designed to provide an intuitive and interactive interface for managing tasks, notes, and projects efficiently. The app is built using the MERN stack (MongoDB, Express, React, Node.js) and includes a clean, responsive UI.
 
----
-
-## Screenshots
-
-Here are some screenshots of the app’s UI:
-
-### Dashboard
-![Dashboard](./screenshots/dashboard.png)
-
-### Task Management
-![Task Management](./screenshots/tasks.png)
-
-### Notes Section
-![Notes Section](./screenshots/notes.png)
-
-
----
-
 ## Features
 
 - Add, edit, and delete tasks or notes  
 - Organize tasks with categories and priorities  
 - Responsive design for desktop and mobile devices 
 
----
+
+## Screenshots
+
+Here are some screenshots of the app’s UI:
+
+### Home
+<img width="1236" height="608" alt="Home page" src="https://github.com/user-attachments/assets/3091e237-009c-4a59-94ba-54be8ae441ad" />
+
+### Create Note
+<img width="1170" height="544" alt="create note page" src="https://github.com/user-attachments/assets/f5ea063b-616e-44c8-9a78-35980fce0fb4" />
 
 ## Getting Started
 
@@ -39,8 +30,6 @@ Make sure you have the following installed:
 - [Node.js](https://nodejs.org/en/) (v19+ recommended)  
 - [npm](https://www.npmjs.com/get-npm)  
 - [MongoDB](https://www.mongodb.com/) (local or cloud instance)
-
----
 
 ### Installation
 
