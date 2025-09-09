@@ -5,7 +5,8 @@ dotenv.config();
 
 const envSchema = z.object({
     PORT: z.string().default("5071").transform(Number),
-    MONGO_URI: z.string()
+    MONGO_URI: z.string(),
+    NODE_ENV: z.string()
 })
 
 const _env = envSchema.safeParse(process.env);
