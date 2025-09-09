@@ -5,7 +5,7 @@ type TNoteResponse = INote[] | INote | {message: string};
 
 export const getAllNotes = async (_: Request, res: Response<TNoteResponse>) => {
     try {
-        const notes = await Note.find();
+        const notes = await Note.find().sort({createdAt: -1});
         res.status(200).json(notes);
     } catch (error) {
         console.log("Error in getAllNotes ", error);
