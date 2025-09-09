@@ -5,12 +5,12 @@ import { noteSchema, type TNoteInput } from '@/schemas/noteSchema';
 
 type NoteFormProps = {
     defaultValues?: TNote;
-    onSubmit: (data: TNote) => void;
+    mutate: (data: TNote) => void;
     heading: string;
     submitLabel: string;
 };
 
-const NoteForm = ({ defaultValues, onSubmit, heading, submitLabel }: NoteFormProps) => {
+const NoteForm = ({ defaultValues, mutate, heading, submitLabel }: NoteFormProps) => {
 
     const form = useForm({
         defaultValues: defaultValues ? defaultValues : {
@@ -18,7 +18,8 @@ const NoteForm = ({ defaultValues, onSubmit, heading, submitLabel }: NoteFormPro
             description: "",
         } as TNoteInput,
         onSubmit: ({ value }) => {
-            console.log(value);
+            mutate(value);
+            // console.log(value)
         }
         
     });
