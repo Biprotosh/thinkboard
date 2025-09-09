@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "vitest run",
-    "lint": "eslint",
+    "lint": "eslint .",
     "format": "prettier",
     "check": "prettier --write . && eslint --fix"
   },

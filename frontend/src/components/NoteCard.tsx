@@ -1,15 +1,14 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import toast from "react-hot-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import type React from "react";
 
 import type { TNote } from '@/types/Note';
 import { deleteNote } from "@/services/noteServices";
-import type React from "react";
 
 const NoteCard = ({ title, description, createdAt, _id }: TNote) => {
 
     const queryClient = useQueryClient();
-    const navigate = useNavigate();
 
     const { mutate } = useMutation({
         mutationFn: deleteNote,

@@ -1,8 +1,8 @@
 import axios from "axios";
 import type { TNote } from "@/types/Note";
 
-export const fetchNote = async (): Promise<TNote[]> => {
-    const res = await axios.get<TNote[]>(`http://localhost:5001/api/notes`);
+export const fetchNote = async (): Promise<Array<TNote>> => {
+    const res = await axios.get<Array<TNote>>(`http://localhost:5001/api/notes`);
     return res.data;
 };
 
@@ -24,6 +24,6 @@ export const updateNote = async (note: TNote): Promise<TNote> => {
     return res.data;
 };
 
-export const deleteNote = (id: string) => {
-    return axios.delete(`http://localhost:5001/api/notes/${id}`);
+export const deleteNote = async (id: string) => {
+    return await axios.delete(`http://localhost:5001/api/notes/${id}`);
 };
