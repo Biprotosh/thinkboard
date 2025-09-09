@@ -7,11 +7,12 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "es2015",
+    "module": "nodenext",
     "target": "esnext",
     "types": [],
 
-    // "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
     
     // For nodejs:
     // "lib": ["esnext"],
@@ -20,6 +21,8 @@
 
     // Other Outputs
     "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
@@ -41,6 +44,5 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "moduleResolution": "bundler"
   }
 }

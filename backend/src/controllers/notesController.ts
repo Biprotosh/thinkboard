@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import Note, { type INote } from "../models/Note";
+import Note, { type INote } from "../models/Note.ts";
 
 type TNoteResponse = INote[] | INote | {message: string};
 
