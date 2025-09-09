@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Biprotosh/thinkboard/issues"
   },
-  "homepage": "https://github.com/Biprotosh/thinkboard#readme"
+  "homepage": "https://github.com/Biprotosh/thinkboard#readme",
+  "dependencies": {
+    "zod": "^3.25.76"
+  }
 }
