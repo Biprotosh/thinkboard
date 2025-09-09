@@ -2,9 +2,9 @@ import express, { type Response } from "express";
 import cors from "cors";
 import path from "path";
 
-import { env_config } from "./config/env.ts";
-import { connectDB } from "./config/db.ts";
-import notesRoutes from "./routes/notesRoutes.ts";
+import { env_config } from "./config/env";
+import { connectDB } from "./config/db";
+import notesRoutes from "./routes/notesRoutes";
 
 const app = express();
 const PORT = env_config.PORT;
