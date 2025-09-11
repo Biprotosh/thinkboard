@@ -13,10 +13,7 @@ ThinkBoard is a modern web application designed to provide an intuitive and inte
 
 Here are some screenshots of the app’s UI:
 
-### Home
 <img width="1236" height="608" alt="Home page" src="https://github.com/user-attachments/assets/3091e237-009c-4a59-94ba-54be8ae441ad" />
-
-### Create Note
 <img width="1170" height="544" alt="create note page" src="https://github.com/user-attachments/assets/f5ea063b-616e-44c8-9a78-35980fce0fb4" />
 
 ## Getting Started
@@ -61,7 +58,7 @@ cd backend
 npm run start
 ```
 
-1. **Start the frontend:**
+2. **Start the frontend:**
 
 ```bash
 cd frontend
